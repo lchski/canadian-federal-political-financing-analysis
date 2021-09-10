@@ -1,5 +1,6 @@
 library(tidyverse)
 library(janitor)
+library(lubridate)
 
 ## Data source: https://www.elections.ca/content.aspx?section=fin&dir=oda&document=index&lang=e
 
@@ -149,4 +150,8 @@ contributions <- contributions_raw %>%
     party_pre_2000,
     party_2000_to_2004
   )
+
+## TODO standardize party names, see `contributions %>% count_group(political_party_of_recipient) %>% View()`
+## - e.g., BQ accents, LPC with/without "P(C)"
+## - maybe just remove "of Canada", then "Party
 
